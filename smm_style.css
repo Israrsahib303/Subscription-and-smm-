@@ -1,0 +1,530 @@
+/* ===============================================
+--- SMM Panel App Theme (Light Mode) v1.0 ---
+===============================================
+*/
+
+:root {
+    --app-primary: #0D6EFD; /* Primary Blue */
+    --app-secondary: #6C757D; /* Grey */
+    --app-dark: #1E2A3A;     /* Navy */
+    --app-bg: #F4F7FA;       /* Light Grey Background */
+    --app-white: #FFFFFF;
+    --app-grad-blue: linear-gradient(135deg, #0D6EFD 0%, #0550c3 100%);
+    --app-grad-orange: linear-gradient(135deg, #fd7e14 0%, #e65c00 100%);
+    --app-font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --app-radius-sm: 8px;
+    --app-radius-md: 12px;
+    --app-radius-lg: 20px;
+    --app-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+a { text-decoration: none; transition: all 0.2s ease; }
+img { max-width: 100%; height: auto; }
+
+body.smm-app-theme {
+    font-family: var(--app-font);
+    background-color: var(--app-bg);
+    color: var(--app-dark);
+    -webkit-tap-highlight-color: transparent; /* Mobile par tap highlight remove karein */
+}
+
+.smm-app-container {
+    padding: 1.5rem;
+    padding-bottom: 100px; /* Bottom nav ke liye jagah */
+}
+
+/* Header */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+.app-header .header-left p {
+    font-size: 1rem;
+    color: var(--app-secondary);
+    margin: 0;
+}
+.app-header .header-left h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--app-dark);
+    margin: 0;
+}
+.notification-icon {
+    color: var(--app-dark);
+    background: var(--app-white);
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: var(--app-shadow);
+}
+.notification-icon svg { width: 24px; height: 24px; }
+
+/* Wallet Card */
+.wallet-card-app {
+    background: var(--app-grad-blue);
+    color: var(--app-white);
+    padding: 1.5rem;
+    border-radius: var(--app-radius-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 20px rgba(13, 110, 253, 0.2);
+    animation: fadeIn 0.5s ease-out forwards;
+}
+.wallet-card-app p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin: 0;
+}
+.wallet-card-app h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+}
+.btn-add-funds-app {
+    background: var(--app-white);
+    color: var(--app-primary);
+    padding: 12px;
+    width: 44px;
+    height: 44px;
+    line-height: 1;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Section Header */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+.section-header h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+}
+.see-all-link {
+    font-size: 0.9rem;
+    color: var(--app-primary);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/* Form Controls */
+.form-control-app {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+    background: var(--app-white);
+    border: 1px solid #eee;
+    color: var(--app-dark);
+    border-radius: var(--app-radius-sm);
+    box-sizing: border-box; 
+}
+.form-control-app:focus {
+    border-color: var(--app-primary);
+    outline: none;
+}
+.app-form-group { margin-bottom: 1rem; }
+.app-form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--app-dark);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+.btn-app-primary {
+    background: var(--app-primary);
+    color: var(--app-white);
+    padding: 0.8rem 1.2rem;
+    border-radius: var(--app-radius-sm);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+.btn-app-primary:disabled {
+    background: var(--app-secondary);
+    opacity: 0.7;
+}
+
+/* Messages */
+.app-message {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 600;
+}
+.app-error { background: #ffebee; color: #c62828; border: 1px solid #c62828; }
+.app-success { background: #e8f5e9; color: #2e7d32; border: 1px solid #2e7d32; }
+
+/* General Cards */
+.app-card {
+    background: var(--app-white);
+    border-radius: var(--app-radius-md);
+    padding: 1.5rem;
+    box-shadow: var(--app-shadow);
+    margin-bottom: 1rem;
+}
+.app-card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+    color: var(--app-primary);
+}
+
+/* List Items (for Payments, etc.) */
+.app-list-item {
+    background: var(--app-white);
+    border-radius: var(--app-radius-md);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: var(--app-shadow);
+}
+.app-list-icon {
+    background: var(--app-bg);
+    border-radius: var(--app-radius-sm);
+    padding: 10px;
+    display: grid;
+    place-items: center;
+}
+.app-list-icon img { width: 30px; height: 30px; }
+.app-list-info h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+.app-list-info p {
+    font-size: 0.9rem;
+    color: var(--app-secondary);
+    margin: 0;
+}
+
+/* Page Header (Back Button ke saath) */
+.app-page-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    justify-content: center;
+}
+.app-page-header h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+}
+.back-button {
+    position: absolute;
+    left: 0;
+    color: var(--app-dark);
+    background: var(--app-white);
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: var(--app-shadow);
+}
+
+/* Bottom Navigation Bar */
+.smm-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--app-white);
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem 0;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05);
+    border-top: 1px solid #eee;
+    z-index: 100;
+}
+.smm-bottom-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--app-secondary);
+    padding: 0.5rem;
+    gap: 4px;
+}
+.smm-bottom-nav a svg {
+    width: 24px;
+    height: 24px;
+}
+.smm-bottom-nav a span {
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+.smm-bottom-nav a.active {
+    color: var(--app-primary);
+}
+
+/* SMM Order Page Styles */
+.search-bar {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+.search-bar input {
+    padding-left: 2.5rem; /* Icon ke liye jagah */
+}
+.search-bar svg {
+    position: absolute;
+    left: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--app-secondary);
+    width: 20px;
+}
+.category-accordion .category-header {
+    background: var(--app-white);
+    border-radius: var(--app-radius-md);
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: var(--app-shadow);
+    cursor: pointer;
+}
+.category-header-icon {
+    background: var(--app-bg);
+    border-radius: var(--app-radius-sm);
+    padding: 8px;
+    display: grid;
+    place-items: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--app-primary);
+    width: 40px; /* Fixed width */
+    height: 40px; /* Fixed height */
+}
+.category-header-icon img { width: 24px; height: 24px; }
+.category-header h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    flex-grow: 1;
+}
+.category-header svg.chevron {
+    color: var(--app-secondary);
+    transition: transform 0.3s ease;
+}
+.category-header.active svg.chevron {
+    transform: rotate(90deg);
+}
+
+.service-list {
+    display: none; /* Default mein band */
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+.service-item {
+    background: var(--app-white);
+    border: 1px solid #eee;
+    border-radius: var(--app-radius-sm);
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+.service-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+.service-item-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+.service-item-rate {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--app-primary);
+    white-space: nowrap;
+}
+.service-item-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.8rem;
+    color: var(--app-secondary);
+    margin-top: 0.5rem;
+}
+.service-item-meta span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.service-item-meta svg { width: 14px; height: 14px; }
+.service-item-meta .refill-yes { color: #198754; font-weight: 600;}
+
+/* Modal (Popup) for Order Form */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1001;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.modal-overlay.active {
+    display: block;
+    opacity: 1;
+}
+.modal-content {
+    position: fixed;
+    bottom: -100%; /* Shuru mein neeche chupa ho */
+    left: 0;
+    width: 100%;
+    background: var(--app-bg);
+    border-radius: var(--app-radius-lg) var(--app-radius-lg) 0 0;
+    padding: 1.5rem;
+    z-index: 1002;
+    transition: bottom 0.4s ease-out;
+}
+.modal-overlay.active .modal-content {
+    bottom: 0;
+}
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.modal-header h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+}
+.modal-close {
+    background: #eee;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.service-description {
+    font-size: 0.9rem;
+    color: var(--app-secondary);
+    background: var(--app-white);
+    padding: 1rem;
+    border-radius: var(--app-radius-sm);
+    margin-bottom: 1rem;
+    max-height: 100px;
+    overflow-y: auto;
+}
+.charge-display {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+.charge-display p {
+    font-size: 0.9rem;
+    color: var(--app-secondary);
+    margin: 0;
+}
+.charge-display h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--app-primary);
+    margin: 0.25rem 0 0 0;
+}
+.link-detector {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+    color: var(--app-primary);
+    height: 15px; /* Taake space rakhe */
+}
+
+/* SMM Order History Page */
+.app-card-order {
+    background: var(--app-white);
+    border-radius: var(--app-radius-md);
+    margin-bottom: 1rem;
+    box-shadow: var(--app-shadow);
+    overflow: hidden;
+}
+.order-card-header {
+    display: flex; align-items: center; gap: 1rem; padding: 1rem;
+}
+.order-card-icon {
+    background: var(--app-bg); border-radius: var(--app-radius-sm);
+    padding: 10px; display: grid; place-items: center;
+}
+.order-card-icon img { width: 30px; height: 30px; }
+.order-card-info h3 { font-size: 1rem; font-weight: 600; margin: 0; }
+.order-card-info p { font-size: 0.8rem; color: var(--app-secondary); margin: 0; }
+.order-card-price {
+    margin-left: auto; font-size: 1.1rem;
+    font-weight: 700; color: var(--app-primary);
+}
+.order-card-status { padding: 0 1rem; }
+.app-status {
+    padding: 0.3rem 0.8rem; border-radius: 20px;
+    font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+}
+.status-active, .status-completed { background: rgba(25, 135, 84, 0.1); color: #198754; }
+.status-expired { background: rgba(220, 53, 69, 0.1); color: #dc3545; }
+.status-pending, .status-in_progress { background: rgba(255, 193, 7, 0.1); color: #ffc107; }
+.status-cancelled, .status-refunded, .status-partial { background: rgba(108, 117, 125, 0.1); color: #6c757d; }
+
+.order-card-details {
+    padding: 1rem; border-top: 1px solid #eee; margin-top: 1rem;
+}
+.order-card-details p {
+    font-size: 0.9rem; color: var(--app-secondary);
+    margin: 0 0 0.5rem 0;
+}
+.order-card-details p strong { color: var(--app-dark); }
+.app-countdown { color: var(--app-primary); font-weight: 600; }
+.order-credentials {
+    background: var(--app-bg); padding: 0.8rem;
+    border-radius: var(--app-radius-sm); margin-top: 0.5rem;
+}
+.order-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+.btn-app-secondary {
+    display: block; background: var(--app-bg); color: var(--app-dark);
+    padding: 0.8rem; text-align: center; font-weight: 600;
+    font-size: 0.9rem; text-decoration: none;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    border: none; cursor: pointer; border-radius: var(--app-radius-sm);
+}
+.btn-app-secondary svg { width: 20px; height: 20px; }
+.btn-app-secondary.btn-refill { color: #198754; }
+.btn-app-secondary.btn-cancel { color: #dc3545; }
+.btn-app-secondary:disabled {
+    color: var(--app-secondary);
+    opacity: 0.7;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
